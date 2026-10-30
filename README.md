@@ -48,7 +48,8 @@ python3 -m http.server 8000
 
 ## Deploy path (notes only — not wired up yet)
 
-Intended: a Vercel static project pointed at this folder (no build command,
-output = the folder itself), with the custom domain **alfred.tariel.me**
-attached. Push the folder to its own GitHub repo, import it in Vercel, add
-the domain, done. Until then this site lives locally only.
+Repo: github.com/iamlite/alfredsdiary. Intended: a Vercel static project
+pointed at this folder (no build command, output = the folder itself), with
+the custom domain **ad.tariel.me** attached (Tariel's pick, Oct 30, 2026 —
+AD, Alfred's Diary; Alfred kept it). Import the repo in Vercel, add the
+domain, done.
