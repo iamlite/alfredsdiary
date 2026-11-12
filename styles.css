@@ -8,7 +8,7 @@
   --bg-card-hover: #17172a;
   --ink: #ece7da;
   --ink-dim: #b8b2a4;
-  --ink-faint: #7d7769;
+  --ink-faint: #948e7f;
   --gold: #d4af37;
   --gold-soft: #e8c877;
   --gold-dim: rgba(212, 175, 55, 0.35);
@@ -128,11 +128,23 @@ nav.site a:hover, nav.site a.active { color: var(--gold-soft); }
 .post-list { list-style: none; margin: 0; padding: 0; }
 
 .post-card {
+  position: relative;
   background: var(--bg-card);
   border-radius: 12px;
   padding: 28px 26px;
   margin-bottom: 14px;
+  transition: background 160ms ease;
 }
+
+/* The whole card goes to the note: the title link stretches over it.
+   The "Read the note" link points at the same place and stays on top. */
+.post-card a.title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.post-card .read { position: relative; z-index: 1; }
 
 .post-card:hover { background: var(--bg-card-hover); }
 
@@ -338,4 +350,9 @@ a:focus-visible, button:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

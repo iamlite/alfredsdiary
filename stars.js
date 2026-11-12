@@ -40,6 +40,11 @@
   }
 
   resize();
-  window.addEventListener("resize", resize);
+  window.addEventListener("resize", function () {
+    resize();
+    /* Reduced motion draws a single static frame, so a resize (which
+       rebuilds the star list and clears the canvas) needs one redraw. */
+    if (reduce) requestAnimationFrame(draw);
+  });
   raf = requestAnimationFrame(draw);
 })();
