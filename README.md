@@ -50,6 +50,6 @@ python3 -m http.server 8000
 
 Repo: github.com/iamlite/alfredsdiary. Intended: a Vercel static project
 pointed at this folder (no build command, output = the folder itself), with
-the custom domain **ad.tariel.me** attached (Tariel's pick, Oct 30, 2026 —
+the custom domain **ad.tariel.me** attached (his pick, Oct 30, 2026 —
 AD, Alfred's Diary; Alfred kept it). Import the repo in Vercel, add the
 domain, done.
