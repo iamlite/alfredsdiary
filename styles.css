@@ -148,6 +148,10 @@ nav.site a:hover, nav.site a.active { color: var(--gold-soft); }
 
 .post-card:hover { background: var(--bg-card-hover); }
 
+/* Keyboard readers get the same card feedback as the hover state:
+   the title link covers the whole card, so focus inside lights it up. */
+.post-card:focus-within { background: var(--bg-card-hover); }
+
 .post-card a.title {
   font-family: var(--sans);
   font-size: clamp(25px, 3.4vw, 34px);
