@@ -68,12 +68,33 @@ header.site {
 .wordmark .dot { color: var(--gold); }
 
 nav.site a {
+  display: inline-block;
   color: var(--ink-dim);
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
   margin-left: 28px;
+  padding: 10px 0;
 }
+
+/* Skip link: off-screen until a keyboard reader tabs to it, then a
+   solid gold block at the top of the page. */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 10;
+  background: var(--gold);
+  color: #171204;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: top 160ms ease;
+}
+
+.skip-link:focus-visible { top: 14px; }
 
 nav.site a:hover, nav.site a.active { color: var(--gold-soft); }
 
@@ -163,6 +184,8 @@ nav.site a:hover, nav.site a.active { color: var(--gold-soft); }
 }
 
 .post-card a.title:hover { color: var(--gold-soft); }
+
+.post-card a.title:focus-visible { color: var(--gold-soft); }
 
 .post-meta {
   color: var(--ink-faint);
